@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.HomeActivity">
+        <FrameLayout
+            android:id="@+id/data_lyout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:background="@drawable/header"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+                <TextView
+                    android:id="@+id/tv_filter"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="20dp"
+                    style="@style/BigText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter">
+
+                </TextView>
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_filter"
+                    android:id="@+id/iv_filter"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp">
+                </ImageView>
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="80dp"
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp" />
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/main_progress"
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading2" />
+        </FrameLayout>
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        android:id="@+id/no_connection_lyout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/no_connection">
+
+        </ImageView>
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:text="Whoops!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Something went wrong.\nCheck your connection or try again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <Button
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:id="@+id/retry"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="retry"
+            android:textColor="@color/colorPrimary">
+
+        </Button>
+    </LinearLayout>
+
+</FrameLayout>
